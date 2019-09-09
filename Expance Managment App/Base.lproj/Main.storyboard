@@ -59,7 +59,7 @@
                                                     <state key="normal" title="New User?"/>
                                                     <connections>
                                                         <action selector="newuser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y3J-WY-1UH"/>
-                                                        <segue destination="bhN-aA-xB2" kind="show" id="qsP-ga-T5C"/>
+                                                        <segue destination="bhN-aA-xB2" kind="presentation" id="ALq-UJ-Q8D"/>
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F26-T9-n59">
@@ -136,10 +136,10 @@
             </objects>
             <point key="canvasLocation" x="136.23188405797103" y="115.84821428571428"/>
         </scene>
-        <!--View Controller-->
+        <!--Register-->
         <scene sceneID="srY-gh-5B5">
             <objects>
-                <viewController id="bhN-aA-xB2" sceneMemberID="viewController">
+                <viewController id="bhN-aA-xB2" customClass="Register" customModule="Expance_Managment_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="q2W-rc-cY0">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -193,6 +193,9 @@
                                             <constraint firstAttribute="width" constant="98" id="RPV-KI-9ct"/>
                                         </constraints>
                                         <state key="normal" title="Submit"/>
+                                        <connections>
+                                            <action selector="Register:" destination="bhN-aA-xB2" eventType="touchUpInside" id="1Bq-kI-Jfk"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -229,6 +232,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nua-Uz-7Ts"/>
                     </view>
+                    <connections>
+                        <outlet property="ConfirmPass" destination="nfq-kb-zba" id="GXj-h5-FE7"/>
+                        <outlet property="Pass" destination="nfq-kb-zba" id="7Ys-C2-wul"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Cr-bi-X7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
