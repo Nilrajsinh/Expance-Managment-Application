@@ -46,7 +46,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        // program to dismiss keyboard
+        super.viewDidLoad()
+        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
     }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
+    }
+    //here  keyboard dismis program end
 
 
 }

@@ -13,6 +13,7 @@ class Register: UIViewController {
     @IBOutlet weak var Name: UITextField!
     
     @IBOutlet weak var Email: UITextField!
+    
     @IBOutlet weak var ConfirmPass: UITextField!
     
     @IBOutlet weak var Pass: UITextField!
@@ -20,7 +21,7 @@ class Register: UIViewController {
     @IBAction func Register(_ sender: Any) {
         
         if (ConfirmPass.text == ""), (Pass.text == ""), (Name.text == ""), (Email.text == "") {
-            let alertView = UIAlertController(title: "Correct Detail", message: "Enter Correct Password", preferredStyle: .alert)
+            let alertView = UIAlertController(title: "InCorrect Detail", message: "Enter Correct Details", preferredStyle: .alert)
             
             alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
                 
@@ -30,7 +31,7 @@ class Register: UIViewController {
             self.present(alertView, animated: true, completion: nil)
             
         }
-        else if (Pass.text != ConfirmPass.text){
+        else if (Pass.text != ConfirmPass.text) {
             let alertView = UIAlertController(title: "Register fail", message: "Register faild", preferredStyle: .alert)
             
             alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
@@ -61,9 +62,15 @@ class Register: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
 
-        // Do any additional setup after loading the view.
+       
     }
     
 
