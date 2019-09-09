@@ -9,13 +9,17 @@
 import UIKit
 
 class Register: UIViewController {
+    
+    @IBOutlet weak var Name: UITextField!
+    
+    @IBOutlet weak var Email: UITextField!
     @IBOutlet weak var ConfirmPass: UITextField!
     
     @IBOutlet weak var Pass: UITextField!
     
     @IBAction func Register(_ sender: Any) {
         
-        if (ConfirmPass.text == ""), (Pass.text == "") {
+        if (ConfirmPass.text == ""), (Pass.text == ""), (Name.text == ""), (Email.text == "") {
             let alertView = UIAlertController(title: "Correct Detail", message: "Enter Correct Password", preferredStyle: .alert)
             
             alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
@@ -26,8 +30,8 @@ class Register: UIViewController {
             self.present(alertView, animated: true, completion: nil)
             
         }
-        else if (Pass.text == ConfirmPass.text){
-            let alertView = UIAlertController(title: "Register Succesful", message: "Register Succesful", preferredStyle: .alert)
+        else if (Pass.text != ConfirmPass.text){
+            let alertView = UIAlertController(title: "Register fail", message: "Register faild", preferredStyle: .alert)
             
             alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
             
@@ -38,8 +42,8 @@ class Register: UIViewController {
 
             
         }
-        else if (Pass.text != ConfirmPass.text) {
-            let alertView = UIAlertController(title: "Incorrect Password", message: "Register fail", preferredStyle: .alert)
+        else if (Pass.text == ConfirmPass.text) {
+            let alertView = UIAlertController(title: " Registration Done", message: "You have Succesfully regiterd", preferredStyle: .alert)
             
             alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
                 

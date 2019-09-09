@@ -172,7 +172,7 @@
                                         <rect key="frame" x="75" y="280" width="239" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="egc-4w-81q">
                                         <rect key="frame" x="75" y="318" width="239" height="30"/>
@@ -234,6 +234,8 @@
                     </view>
                     <connections>
                         <outlet property="ConfirmPass" destination="nfq-kb-zba" id="GXj-h5-FE7"/>
+                        <outlet property="Email" destination="Hb2-4u-RFe" id="cU2-8N-bWn"/>
+                        <outlet property="Name" destination="ftQ-Y8-GMe" id="hdm-yy-y3E"/>
                         <outlet property="Pass" destination="nfq-kb-zba" id="7Ys-C2-wul"/>
                     </connections>
                 </viewController>
