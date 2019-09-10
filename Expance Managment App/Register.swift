@@ -20,7 +20,7 @@ class Register: UIViewController {
     
     @IBAction func Register(_ sender: Any) {
         
-        if (ConfirmPass.text == ""), (Pass.text == ""), (Name.text == ""), (Email.text == "") {
+        if (ConfirmPass.text == "") {
             let alertView = UIAlertController(title: "InCorrect Detail", message: "Enter Correct Details", preferredStyle: .alert)
             
             alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
@@ -31,6 +31,41 @@ class Register: UIViewController {
             self.present(alertView, animated: true, completion: nil)
             
         }
+        else if(Pass.text == ""){
+            let alertView = UIAlertController(title: "InCorrect Detail", message: "Enter Correct Details", preferredStyle: .alert)
+            
+            alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+                
+                
+            }))
+            
+            self.present(alertView, animated: true, completion: nil)
+            
+        }
+        else if(Name.text == ""){
+            let alertView = UIAlertController(title: "InCorrect Detail", message: "Enter Correct Details", preferredStyle: .alert)
+            
+            alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+                
+                
+            }))
+            
+            self.present(alertView, animated: true, completion: nil)
+            
+        }
+        else if(Email.text == ""){
+            let alertView = UIAlertController(title: "InCorrect Detail", message: "Enter Correct Details", preferredStyle: .alert)
+            
+            alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
+                
+                
+            }))
+            
+            self.present(alertView, animated: true, completion: nil)
+            
+        }
+        
+            
         else if (Pass.text != ConfirmPass.text) {
             let alertView = UIAlertController(title: "Register fail", message: "Register faild", preferredStyle: .alert)
             
@@ -43,7 +78,7 @@ class Register: UIViewController {
 
             
         }
-        else if (Pass.text == ConfirmPass.text) {
+        else   {
             let alertView = UIAlertController(title: " Registration Done", message: "You have Succesfully regiterd", preferredStyle: .alert)
             
             alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
@@ -67,7 +102,7 @@ class Register: UIViewController {
         view.addGestureRecognizer(tap)
     }
     
-    @objc func dismissKeyboard() {
+    @objc  func dismissKeyboard() {
         view.endEditing(true)
 
        
