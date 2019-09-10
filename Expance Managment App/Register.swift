@@ -66,8 +66,8 @@ class Register: UIViewController {
         }
         
             
-        else if (Pass.text != ConfirmPass.text) {
-            let alertView = UIAlertController(title: "Register fail", message: "Register faild", preferredStyle: .alert)
+       else if Pass.text! == ConfirmPass.text! {
+            let alertView = UIAlertController(title: "Registration Done", message: "You have Succesfully regiterd", preferredStyle: .alert)
             
             alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
             
@@ -79,7 +79,7 @@ class Register: UIViewController {
             
         }
         else   {
-            let alertView = UIAlertController(title: " Registration Done", message: "You have Succesfully regiterd", preferredStyle: .alert)
+            let alertView = UIAlertController(title: " Registration faild", message: "Password did not match", preferredStyle: .alert)
             
             alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
                 
