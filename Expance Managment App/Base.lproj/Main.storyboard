@@ -236,7 +236,7 @@
                         <outlet property="ConfirmPass" destination="nfq-kb-zba" id="GXj-h5-FE7"/>
                         <outlet property="Email" destination="Hb2-4u-RFe" id="cU2-8N-bWn"/>
                         <outlet property="Name" destination="ftQ-Y8-GMe" id="hdm-yy-y3E"/>
-                        <outlet property="Pass" destination="nfq-kb-zba" id="7Ys-C2-wul"/>
+                        <outlet property="Pass" destination="egc-4w-81q" id="quA-aX-4An"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Cr-bi-X7I" userLabel="First Responder" sceneMemberID="firstResponder"/>
