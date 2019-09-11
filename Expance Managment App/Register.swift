@@ -18,6 +18,20 @@ class Register: UIViewController {
     
     @IBOutlet weak var Pass: UITextField!
     
+    
+    
+    @IBAction func ShowPass(_ sender: Any) {
+     
+            Pass.isSecureTextEntry = !(Pass.isSecureTextEntry)
+        
+        ConfirmPass.isSecureTextEntry = !(ConfirmPass.isSecureTextEntry)
+        
+    }
+    
+    
+    
+    
+   
     @IBAction func Register(_ sender: Any) {
         
         if (ConfirmPass.text == "") {
@@ -100,6 +114,8 @@ class Register: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         
         view.addGestureRecognizer(tap)
+        
+    
     }
     
     @objc  func dismissKeyboard() {
