@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Register: UIViewController {
+class Register: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     @IBOutlet weak var Name: UITextField!
     
@@ -29,9 +29,6 @@ class Register: UIViewController {
     }
     
     
-    
-    
-   
     @IBAction func Register(_ sender: Any) {
         
         if (ConfirmPass.text == "") {
@@ -114,8 +111,6 @@ class Register: UIViewController {
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         
         view.addGestureRecognizer(tap)
-        
-    
     }
     
     @objc  func dismissKeyboard() {
@@ -124,15 +119,42 @@ class Register: UIViewController {
        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    //add image to register form
+    
+    @IBOutlet weak var UserImageView: UIImageView!
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
+        let Image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+        UserImageView.image = Image
+        self.dismiss(animated: true, completion: nil)
+        
+        
     }
-    */
-
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        self.dismiss(animated: true, completion: nil)
+    
+    }
+    
+    
+    var ImagePickerController:UIImagePickerController!
+    
+    
+    @IBAction func pickImage(_ sender: UIButton) {
+        
+        
+        ImagePickerController = UIImagePickerController()
+        ImagePickerController.delegate = self
+        ImagePickerController.sourceType = .photoLibrary
+        
+      //  self.navigationController.pushViewController(ImagePickerController, animated: true)
+        self.present(ImagePickerController, animated: true, completion: nil)
+        
+        
+        
+    }
+    
 }
