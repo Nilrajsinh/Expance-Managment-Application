@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Register: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+class Register: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -198,6 +198,10 @@ class Register: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         
         
         
+    }
+    
+    
+    @IBAction func LogIn(_ sender: Any) {
     }
     
 }

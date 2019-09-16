@@ -415,6 +415,10 @@
                                                             <include reference="UKv-eg-wUP"/>
                                                         </mask>
                                                     </variation>
+                                                    <connections>
+                                                        <action selector="LogIn:" destination="bhN-aA-xB2" eventType="touchUpInside" id="hBu-Vb-rtW"/>
+                                                        <segue destination="BYZ-38-t0r" kind="show" id="trI-4m-YOF"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
