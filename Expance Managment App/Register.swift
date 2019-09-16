@@ -8,7 +8,28 @@
 
 import UIKit
 
-class Register: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class Register: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if pickerView == Country {
+            return CountryList.count
+        } else if pickerView == Gender {
+            return GenderList.count
+        }
+        return 1
+    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if pickerView == Country {
+            return CountryList[row]
+        } else if pickerView == Gender {
+            return GenderList[row]
+        }
+        return ""
+    }
+    
     
     @IBOutlet weak var Name: UITextField!
     
@@ -18,6 +39,16 @@ class Register: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     @IBOutlet weak var Pass: UITextField!
     
+   // @IBOutlet weak var Gender: UISegmentedControl!
+    
+    @IBOutlet weak var Country: UIPickerView!
+    
+    @IBOutlet weak var Gender: UIPickerView!
+    
+    
+    
+    var CountryList = ["India","Canada","U.S.A.","Other"]
+    var GenderList = ["Male","Female","Other"]
     
     
     @IBAction func ShowPass(_ sender: Any) {
@@ -100,8 +131,16 @@ class Register: UIViewController, UIImagePickerControllerDelegate, UINavigationC
             self.present(alertView, animated: true, completion: nil)
             }
         
-    
         
+        print(self.ConfirmPass.text)
+        print(self.Email.text)
+        print(self.Name.text)
+        print(self.Pass.text)
+        
+       // print(self.Gender.selectedRow(inComponent: 0).description)
+    
+      
+
     
     }
     
@@ -111,6 +150,10 @@ class Register: UIViewController, UIImagePickerControllerDelegate, UINavigationC
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         
         view.addGestureRecognizer(tap)
+        
+        Country.delegate = self
+        Gender.delegate = self
+        
     }
     
     @objc  func dismissKeyboard() {
