@@ -15,37 +15,24 @@ class ViewController: UIViewController {
     
     @IBAction func newuser(_ sender: Any) {
         
+        // here is the code to visit another activity programitacally
+        
+        
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        let register = storyBoard.instantiateViewController(withIdentifier: "Register") as! Register
+        self.navigationController?.pushViewController(register, animated: true)
         
     }
     
     
     @IBAction func TxtLogin(_ sender: Any) {
-        if (txtEmail.text == "abc@gmail.com"),
-            (txtpass.text == "nil") {
-            let alertView = UIAlertController(title: "Login Succesful", message: "login Succesful", preferredStyle: .alert)
-            
-            alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-                
-            }))
-            
-            self.present(alertView, animated: true, completion: nil)
-            
-            
-        }
-        else {
-            let alertView = UIAlertController(title: "Enter Correct Detail", message: "login Faild", preferredStyle: .alert)
-            
-            alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-                
-            }))
-            
-            self.present(alertView, animated: true, completion: nil)
-            
-        }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        
         // program to dismiss keyboard
         super.viewDidLoad()
         

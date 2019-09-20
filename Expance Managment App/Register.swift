@@ -62,86 +62,9 @@ class Register: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     
     @IBAction func Register(_ sender: Any) {
         
-        if (ConfirmPass.text == "") {
-            let alertView = UIAlertController(title: "InCorrect Detail", message: "Enter Correct Details", preferredStyle: .alert)
-            
-            alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-                
-                
-            }))
-            
-            self.present(alertView, animated: true, completion: nil)
-            
-        }
-        else if(Pass.text == ""){
-            let alertView = UIAlertController(title: "InCorrect Detail", message: "Enter Correct Details", preferredStyle: .alert)
-            
-            alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-                
-                
-            }))
-            
-            self.present(alertView, animated: true, completion: nil)
-            
-        }
-        else if(Name.text == ""){
-            let alertView = UIAlertController(title: "InCorrect Detail", message: "Enter Correct Details", preferredStyle: .alert)
-            
-            alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-                
-                
-            }))
-            
-            self.present(alertView, animated: true, completion: nil)
-            
-        }
-        else if(Email.text == ""){
-            let alertView = UIAlertController(title: "InCorrect Detail", message: "Enter Correct Details", preferredStyle: .alert)
-            
-            alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-                
-                
-            }))
-            
-            self.present(alertView, animated: true, completion: nil)
-            
-        }
-        
-            
-       else if Pass.text! == ConfirmPass.text! {
-            let alertView = UIAlertController(title: "Registration Done", message: "You have Succesfully regiterd", preferredStyle: .alert)
-            
-            alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-            
-                
-            }))
-            
-            self.present(alertView, animated: true, completion: nil)
-
-            
-        }
-        else   {
-            let alertView = UIAlertController(title: " Registration faild", message: "Password did not match", preferredStyle: .alert)
-            
-            alertView.addAction(UIAlertAction(title: "OK", style: .cancel, handler: { _ in
-                
-                
-            }))
-            
-            self.present(alertView, animated: true, completion: nil)
-            }
+        self.navigationController?.popViewController(animated: true)
         
         
-        print(self.ConfirmPass.text)
-        print(self.Email.text)
-        print(self.Name.text)
-        print(self.Pass.text)
-        
-       // print(self.Gender.selectedRow(inComponent: 0).description)
-    
-      
-
-    
     }
     
     override func viewDidLoad() {
@@ -180,7 +103,8 @@ class Register: UIViewController, UIImagePickerControllerDelegate, UINavigationC
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
     
-    }
+    
+    }  
     
     
     var ImagePickerController:UIImagePickerController!
@@ -196,12 +120,13 @@ class Register: UIViewController, UIImagePickerControllerDelegate, UINavigationC
       //  self.navigationController.pushViewController(ImagePickerController, animated: true)
         self.present(ImagePickerController, animated: true, completion: nil)
         
-        
-        
     }
     
     
     @IBAction func LogIn(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
 }
